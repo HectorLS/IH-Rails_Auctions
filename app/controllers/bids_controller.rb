@@ -1,24 +1,16 @@
 class BidsController < ApplicationController
 
-	def index
-	end
-
-	def new
-	end
-
 	def create
+		@bid = Bid.new bid_params
+		if @bid.save
+			redirect_to auction_path(@bid.auction_id)
+		end
+		# Falta un ELSE que despliegue un mensaje de error
 	end
 
-	def show
+	private
+	def bid_params
+		params.require(:bid).permit(:auction_id, :user_id, :amount)
+		
 	end
-
-	def edit
-	end
-
-	def update
-	end
-
-	def destroy
-	end
-
 end
