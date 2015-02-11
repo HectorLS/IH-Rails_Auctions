@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Auctions</title>
+  <title>AuctionsWebApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<nav>
+		<ul>
+			<li class="">Home</li>
+			<li class=""><%= link_to("Subastas", auctions_path) %></li>
+			<li class=""><%= link_to("Usuarios", users_path) %></li>
+			<li class="">Contacto</li>
+		</ul>
+	</nav>
+	<header class="header--top">
+		<h1>Welcome to the AuctionsWebApp</h1>
+		<h2>Hope you can find here what you are looking for</h2>
+	</header>
+	
+	<section class="main-content">
+		<%= yield %>
+	</section>
+	<aside>
+		<!-- Here the sidebar. -->
+	</aside>
 </body>
 </html>

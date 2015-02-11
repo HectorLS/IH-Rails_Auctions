@@ -1,0 +1,16 @@
+<%= form_for @user do |f| %>
+	<fieldset>
+		<legend>Register now and get premium access</legend>
+		<div class="form_field">
+			<%= f.label :name %>
+			<%= f.text_field :name, placeholder: "Name" %>
+		</div>
+		<div class="form_field">
+			<%= f.label :email %>
+			<%= f.email_field :email, placeholder: "example@mail.com" %>
+		</div>
+		<div class="form_field">
+		<%= f.submit 'Sign in' %>
+		</div>
+	</fieldset>
+<% end %>

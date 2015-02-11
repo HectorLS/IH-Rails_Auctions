@@ -1,0 +1,16 @@
+<%= form_for @auction do |f| %>
+	<fieldset>
+		<legend>Create your auction now it's easier than ever</legend>
+		<div class="form_field">
+			<%= f.label :name %>
+			<%= f.text_field :name, placeholder: "Auction name" %>
+		</div>
+		<div class="form_field">
+			<%= f.label "End auction date" %>
+			<%= f.date_field :end_date %>
+		</div>
+		<div class="form_field">
+		<%= f.submit 'Publish Auction' %>
+		</div>
+	</fieldset>
+<% end %>

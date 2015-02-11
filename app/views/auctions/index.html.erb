@@ -1,0 +1,12 @@
+<p>Hello</p>
+
+<ul class="auction_list">
+	<% @auctions.each do |auction| %>
+		<li class="auction_item">
+			<span><%= link_to(auction.name, auction_path(auction.id)) %></span>
+		</li>
+	<% end %>
+</ul>
+
+
+<%= link_to("+New aution", new_auction_path) %>

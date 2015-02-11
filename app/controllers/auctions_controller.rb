@@ -20,6 +20,8 @@ class AuctionsController < ApplicationController
 
 	def show
 		@auction = Auction.find params[:id]
+		@users = User.all
+		@bid = Bid.new
 	end
 
 	def destroy

@@ -1,0 +1,21 @@
+
+
+
+<h2><%= @auction.name %></h2>
+<p><span><%= @auction.end_date %></span></p>
+
+
+<%= form_for @bid do |f| %>
+	<%= f.hidden_field :auction_id, value: @auction.id %>
+	<fieldset>
+		<legend>Bids now for this item</legend>
+		<div class="form_field">
+			<%= f.select(:user_id, options_for_select(@users.map { |user| [user.name, user.id] })) %>
+		</div>
+		<div class="form_field">
+			<%= f.label "€" %>
+			<%= f.text_field :amount, placeholder: "99,99" %>
+		</div>
+		<%= f.submit 'Save bid' %>
+	</fieldset>
+<% end %>
