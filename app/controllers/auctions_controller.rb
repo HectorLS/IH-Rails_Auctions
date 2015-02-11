@@ -1,7 +1,7 @@
 class AuctionsController < ApplicationController
 
 	def index
-		@auctions = Auction.all
+		@auctions = Auction.all.where("end_date > ?",Date.today) 
 	end
 
 	def new
