@@ -3,6 +3,7 @@ class BidsController < ApplicationController
 	def create
 		@bid = Bid.new bid_params
 		@bid.save
+		
 		redirect_to auction_path(@bid.auction_id)
 	end
 

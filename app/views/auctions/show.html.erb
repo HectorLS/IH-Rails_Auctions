@@ -5,16 +5,19 @@
 <p><span><%= @auction.end_date %></span></p>
 
 
+<!-- If fuction to check if the auction is still available and show the form -->
+
 <%= form_for @bid do |f| %>
 	<%= f.hidden_field :auction_id, value: @auction.id %>
 	<fieldset>
 		<legend>Bids now for this item</legend>
 		<div class="form_field">
+			<%= f.label "User to BId" %>
 			<%= f.select(:user_id, options_for_select(@users.map { |user| [user.name, user.id] })) %>
 		</div>
 		<div class="form_field">
 			<%= f.label "€" %>
-			<%= f.text_field :amount, placeholder: "99,99" %>
+			<%= f.number_field :amount, placeholder: "99,99" %>
 		</div>
 		<%= f.submit 'Save bid' %>
 	</fieldset>
